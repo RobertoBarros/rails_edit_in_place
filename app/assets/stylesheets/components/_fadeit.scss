@@ -1,0 +1,16 @@
+@-o-keyframes fadeIt {
+  0%   { background-color: #F4F4F4; }
+  50%  { background-color: #3CB371; }
+  100% { background-color: #F4F4F4; }
+}
+@keyframes fadeIt {
+  0%   { background-color: #F4F4F4; }
+  50%  { background-color: #3CB371; }
+  100% { background-color: #F4F4F4; }
+}
+
+.edited {
+  background-image:none !important;
+    -o-animation: fadeIt 2s ease-in-out;
+    animation: fadeIt 2s ease-in-out;
+}

@@ -1,0 +1,13 @@
+<% if @user.errors.any? %>
+  $('#userModal .modal-content').html('<%= j render "users/modal", user: @user %>');
+<% else %>
+  $('#userModal').modal('hide');
+
+  $('tr[data-user-id="' + <%= @user.id %> + '"]').replaceWith('<%= j render "users/user", user: @user %>');
+
+  <% if @changed %>
+    $('tr[data-user-id="' + <%= @user.id %> + '"]').addClass('edited');
+  <% end %>
+
+
+<% end %>

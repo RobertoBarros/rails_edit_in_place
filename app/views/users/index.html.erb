@@ -1,4 +1,4 @@
-<h1 class="mb-4">Users List</h1>
+<h1 class="my-3">Users List</h1>
 
 <table class="table">
 <thead>
@@ -6,23 +6,34 @@
       <th scope="col">#</th>
       <th scope="col">Name</th>
       <th scope="col">Address</th>
-      <th scope="col">City</th>
-      <th scope="col">State</th>
+      <th scope="col">City / State</th>
+      <th scope="col">Postcode</th>
       <th scope="col">Phone</th>
       <th scope="col">Edit</th>
     </tr>
   </thead>
   <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <th scope="row"><%= user.id %></th>
-        <td><%= user.first_name %> <%= user.last_name %></td>
-        <td><%= user.address %></td>
-        <td><%= user.city %></td>
-        <td><%= user.state %></td>
-        <td><%= user.phone %></td>
-        <td><%= link_to edit_user_path(user) do %><i class="fas fa-edit"></i><% end %></td>
-      </tr>
-    <% end %>
+    <%= render @users %>
   </tbody>
 </table>
+
+<div class="modal fade" id="userModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Edit User</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        INPUTS
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-block">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
